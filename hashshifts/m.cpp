@@ -12,7 +12,7 @@ void main()
 	std::cout << t[100].GetData() << std::endl;
 	std::cout << t[500].GetData() << std::endl;
 	std::cout << t[600].GetData() << std::endl;
-	t.Del(600);
+	t.writeToFile();
 	std::cout << t[990].GetData() << std::endl;
 	try {
 		std::cout << t[600].GetData() << std::endl;//Îøèáêà

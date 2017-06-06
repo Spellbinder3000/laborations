@@ -2,6 +2,8 @@
 #define _HT_H_
 
 #include "node.h"
+#include <iostream>
+#include <fstream>
 
 template <class KEY, class DATA>
 class Table
@@ -20,6 +22,21 @@ Node<KEY,DATA>& operator[](KEY k_);
 Table& operator=(Table& ht);
 void Add(DATA val_,KEY k_);
 void Del(KEY k_);
+void writeToFile()
+{
+	std::ofstream file("table");
+	for (size_t i = 0; i < size; i++)
+	{
+		if (mas[i].isuse == true)
+		{
+			file << mas[i].GetKey() << std::endl;
+			file << mas[i].GetData() << std::endl;
+		}
+
+	}
+	file.close();
+
+}
 };
 
 template <class KEY, class DATA>

@@ -3,6 +3,8 @@
 
 #include "node.h"
 #include "LinkedList.h"
+#include <iostream>
+#include <fstream>
 
 template <class KEY, class DATA>
 class Table
@@ -21,6 +23,38 @@ Table& operator=(Table& ht);
 void Add(DATA val_,KEY k_);
 void Del(KEY k_);
 void resize(int newSize);
+void printFromFile()
+{
+	std::ifstream file("table");
+	int i = 0;
+	KEY tmp;
+	LinkedList<DATA> l;
+	while (file>>tmp)
+	{
+		DATA tmpv;
+		file >> tmpv;
+		l.add(tmpv);
+	}
+	file.close();
+	int *aa = new int[l.size()];
+	int iter = 0;
+	while (iter<l.size())
+	{
+		bool flag = false;
+		int tmp = rand() % l.size();
+		for (size_t i = 0; i < iter; i++)
+		{
+			if (aa[i] == tmp)
+				flag = true;
+		}
+		if (!flag)
+		{
+			std::cout << l.get(tmp)<<std::endl;
+		}
+		iter++;
+	}
+	delete[] aa;
+}
 };
 
 
