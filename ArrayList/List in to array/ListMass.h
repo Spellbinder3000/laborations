@@ -24,6 +24,17 @@ class Spisok
 	void addStart(TYPE);
 	void addEnd(TYPE);
 	bool isEnd(int);
+	void print()
+	{
+		int a[3];
+
+		for (int i = getStart(); !isEnd(i); i = getNext(i))
+		{
+			a[i % 3] = get(i);
+		}
+		for (int i = 0; i < 3; i++)
+			std::cout << a[i] << " ";
+	}
 };
  
 template <class TYPE>

@@ -13,10 +13,7 @@ void main()
 		vvv.add(1212, 12.123);
 		
 		
-		std::cout << vvv[121]<<vvv[123]<<vvv[1212];
-
-
-		std::cout << vvv;
+		vvv.printRandom();
 
 		vvv.resize(3);
 	

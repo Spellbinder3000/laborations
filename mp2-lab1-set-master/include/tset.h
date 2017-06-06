@@ -45,5 +45,13 @@ public:
 
   friend istream &operator>>(istream &istr, TSet &bf);
   friend ostream &operator<<(ostream &ostr, const TSet &bf);
+  void print()
+  {
+	  for (unsigned int i = 0; i < MaxPower; i++)
+	  {
+		  if (IsMember(i) && i % 11 == 0)
+			  std::cout << i << std::endl;
+	  }
+  }
 };
 #endif

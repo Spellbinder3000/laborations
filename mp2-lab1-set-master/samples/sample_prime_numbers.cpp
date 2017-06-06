@@ -9,7 +9,7 @@
 
 // #define USE_SET // Использовать класс TSet,
                 // закоментировать, чтобы использовать битовое поле
-
+#define USE_SET
 #ifndef USE_SET // Использовать класс TBitField
 
 #include "tbitfield.h"
@@ -58,7 +58,14 @@ int main()
 int main()
 {
   int n, m, k, count;
-
+  TSet a(100);
+  a.InsElem(11);
+  a.InsElem(22);
+  a.InsElem(33);
+  a.InsElem(4);
+  a.InsElem(5);
+  a.InsElem(6);
+  a.print();
   setlocale(LC_ALL, "Russian");
   cout << "Тестирование программ поддержки множества" << endl;
   cout << "              Решето Эратосфена" << endl;

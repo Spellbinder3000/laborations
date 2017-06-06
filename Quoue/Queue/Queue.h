@@ -36,6 +36,12 @@ public:
 		return tmp;
 		
 	}
+	bool checkTop()
+	{
+		if (next() % 77 == 0)
+			return true;
+		return false;
+	}
 
 	T pop()
 	{

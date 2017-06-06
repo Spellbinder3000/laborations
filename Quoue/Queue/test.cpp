@@ -11,10 +11,12 @@ int main()
 
 		Queue <int> temp(10);
 
+		temp.push(77);
 		temp.push(5);
 		temp.push(7);
 		temp.push(25);
 		temp.push(40);
+		cout<<temp.checkTop()<<endl;
 		temp.resize(9);
 		cout << temp.pop(); 
 		cout << " " << temp.pop(); 

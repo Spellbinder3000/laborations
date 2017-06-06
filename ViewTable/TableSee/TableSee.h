@@ -24,7 +24,20 @@ public:
 
 	void resize(size_t newsized);
 
+	V findMinKey()
+	{
+		K tmp;
+		for (int i = 0; i < MaxSizeTable; i++)
+		{
+			if (arrKey[i] != NULL)
+			{
+				if (i == 0 || tmp > arrKey[i])
+					tmp = i;
+			}
 
+		}
+		return arrVal[tmp];
+	}
 
 };
 

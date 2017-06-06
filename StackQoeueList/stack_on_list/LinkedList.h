@@ -32,7 +32,7 @@ public:
 		} while (next != head);
 	}
 
-	void add(E e);
+	void addEnd(E e);
 
 	E get(size_t index);
 	bool isEmpty();
@@ -52,7 +52,7 @@ public:
 };
 
 template<class E>
-void LinkedList<E>::add(E e)
+void LinkedList<E>::addEnd(E e)
 {
 	node *tmp = new node;
 	tmp->data = e;
@@ -73,7 +73,7 @@ template<class E>
 E LinkedList<E>::get(size_t index)
 {
 	if (index > count)
-		throw INDEX_ERROR_EXCEPTION;
+		throw 1;
 	size_t counter = 0;
 	for (node *i = head; counter < count; i = i->next, counter++)
 	{
@@ -82,7 +82,7 @@ E LinkedList<E>::get(size_t index)
 			return i->data;
 		}
 	}
-	throw UNKONW_EXCEPTION;
+	throw 2;
 }
 
 

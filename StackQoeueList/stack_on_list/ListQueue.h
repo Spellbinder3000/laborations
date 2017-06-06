@@ -1,5 +1,6 @@
 #pragma once
 #include "LinkedList.h"
+#include <iostream>
 
 template<class E>
 class ListQueue
@@ -45,4 +46,15 @@ public:
 				return list->get(index);
 		}
 	}
+
+	void print()
+	{
+		std::cout << list->get(list->getStart())<<std::endl;
+		for (int i = list->getEnd(); i != list->getStart() && i>list->getEnd()-5; i--)
+		{
+			std::cout << list->get(i)<<std::endl;
+		}
+
+	}
+
 };

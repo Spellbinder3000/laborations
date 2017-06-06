@@ -35,6 +35,31 @@ public:
 		return os;
 	}
 
+	void printRandom()
+	{
+		int *aa = new int[countUsed];
+		int iter = 0;
+		while (iter < countUsed)
+		{
+			int tmp = rand() % countUsed;
+			bool dobl = false;
+			for (int i = 0; i < iter; i++)
+			{
+				if (aa[i] == tmp)
+				{
+					dobl = true;
+					break;
+				}
+			}
+			if (!dobl)
+			{
+				aa[iter++] = tmp;
+				std::cout << arrVal[tmp]<<std::endl;
+			}
+
+		}
+	}
+
 };
 
 template<class K, class V>
