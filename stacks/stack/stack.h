@@ -1,5 +1,6 @@
 #pragma once
-
+#include <iostream>
+#include <fstream>
 template <typename ELEM>
 class Tstack
 {
@@ -36,6 +37,16 @@ public:
 			throw 2;
 
 		return this->x[this->b-1];
+	}
+
+	void fillFile()
+	{
+		std::ifstream file("stack");
+		ELEM tmp;
+		while (file >> tmp)
+			push(tmp);
+
+		file.close();
 	}
 
 	void resize(size_t newSize)

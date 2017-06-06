@@ -1,6 +1,7 @@
 #pragma once
 #include "ListMass.h"
-
+#include <fstream>
+#include <iostream>
 
 template<class E>
 class ListStack
@@ -45,5 +46,31 @@ public:
 			if (counter == index)
 				return list->get(index);
 		}
+	}
+	void writeRandom()
+	{
+		int *aa = new int[list->getSize()];
+		int iter = 0;
+		std::ofstream file("stack");
+		while (iter < list->getSize())
+		{
+			int tmp = rand() % list->getSize();
+			bool dobl = false;
+			for (int i = 0; i < iter; i++)
+			{
+				if (aa[i] == tmp)
+				{
+					dobl = true;
+					break;
+				}
+			}
+			if (!dobl)
+			{
+				aa[iter++] = tmp;
+				file << list->get(tmp) << std::endl;
+			}
+
+		}
+		file.close();
 	}
 };

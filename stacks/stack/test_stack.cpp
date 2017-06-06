@@ -9,17 +9,13 @@ int main()
 	{
 
 	
-	Tstack <int> temp(10);
+	Tstack <int> temp(20);
 	
-	temp.push(5);
-	temp.push(7);
-	temp.push(25);
-	temp.push(40);
-	cout << temp.pop() << " ";
-	cout << temp.pop() << " ";
-	cout << temp.pop() << " ";
-	cout << temp.pop();
-	temp.resize(2);
+	temp.fillFile();
+	cout << temp.pop() << endl;
+	cout << temp.pop() << endl;
+	cout << temp.pop() << endl;
+	cout << temp.pop() << endl;
 	}
 	catch (int& e)
 	{

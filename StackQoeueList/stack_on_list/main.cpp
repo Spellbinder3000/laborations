@@ -5,7 +5,7 @@
 
 void main()
 {
-	//ListStack<int> lt;
+	ListStack<int> lt;
 	ListQueue<int> lq;
 
 	lq.add(05);
@@ -17,7 +17,16 @@ void main()
 	lq.add(85);
 	lq.add(95);
 
+	lt.add(05);
+	lt.add(15);
+	lt.add(25);
+	lt.add(35);
+	lt.add(45);
+	lt.add(75);
+	lt.add(85);
+	lt.add(95);
 
+	lt.writeRandom();
 
 	try
 	{
